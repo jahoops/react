@@ -21,15 +21,16 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
-    },
-    {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract('css!sass')
-    }
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.css$/,
+        loaders: ['style-loader','css-loader']
+      }
     ]
   }
 };
